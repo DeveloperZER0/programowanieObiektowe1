@@ -3,51 +3,45 @@ package Tasks;
 import Helper.Input;
 import Helper.RandomNum;
 
-import java.util.Random;
-
-public class RunTasks {
-    RandomNum rand = new RandomNum();
+public class Tasks {
     Input input = new Input();
     public void arrSumMean(float[] arr) {
         float sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-        System.out.println("For:\n");
-        System.out.printf("Suma: %f\nŚrednia: %f",sum,sum / arr.length);
+        System.out.println("For:");
+        System.out.printf("Suma: %f\nŚrednia: %f\n",sum,sum / arr.length);
         sum = 0;
         for(float n : arr) {
             sum += n;
         }
-        System.out.println("Foreach:\n");
-        System.out.printf("Suma: %f\nŚrednia: %f",sum, sum / arr.length);
+        System.out.println("Foreach:");
+        System.out.printf("Suma: %f\nŚrednia: %f\n",sum, sum / arr.length);
     }
     public void everySecondElOfArr(float[] arr1, float[] arr2) {
-        System.out.println("Ciąg 1:");
+        System.out.println("\nCiąg 1:");
         for (int i = 0; i < arr1.length; i++) {
             if(i%2 == 1) {
-                System.out.println(arr1[i]);
+                System.out.print(arr1[i]+" ");
             }
         }
-        System.out.println("Ciąg 2:");
+        System.out.println("\nCiąg 2:");
         for (int i = 0; i < arr2.length; i++) {
             if(i%2 == 1) {
-                System.out.println(arr2[i]);
+                System.out.print(arr2[i]+" ");
             }
         }
     }
     public void arrOfString(String[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = input.readString();
-        }
         for (String s : arr) {
-            System.out.println(s.toUpperCase());
+            System.out.print(s.toUpperCase()+" ");
         }
     }
     public void reverseStringArray(String[] arr) {
         for (int i = arr.length-1; i >= 0; i--) {
             String reverse="";
-            for(int j=arr[i].length()-1; i>=0; i--) {
+            for(int j=arr[i].length()-1; j>=0; j--) {
                 reverse = reverse + arr[i].charAt(j);
             }
             System.out.println(reverse);
@@ -81,7 +75,7 @@ public class RunTasks {
             for (int i = 1; i <= n; i++) {
                 fact = fact * i;
             }
-            System.out.println(fact);
+            System.out.println("Silnia z "+n+" to: "+fact);
         }
     }
     public boolean matchingElInArray(String[] arr1, String[] arr2) {
